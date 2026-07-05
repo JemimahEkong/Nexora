@@ -1,5 +1,4 @@
 // src/lib/api.js
-// Drop this file into your frontend at src/lib/api.js
 // Every function maps exactly to what the backend exposes.
 // All components import { api } from '../lib/api'
 
