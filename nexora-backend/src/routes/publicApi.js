@@ -1,6 +1,5 @@
 // src/routes/publicApi.js
 // Public REST API for downstream developer integrations.
-// This is what the Developers page demonstrates and what the judges score for "developer API quality".
 // Auth: Bearer <apiKey> from the merchant's settings.
 
 import express from 'express';
