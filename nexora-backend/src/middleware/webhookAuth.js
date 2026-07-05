@@ -1,6 +1,5 @@
 // src/middleware/webhookAuth.js
 // Verifies Nomba HMAC-SHA256 webhook signature.
-// Must be applied BEFORE express.json() on the webhook route — we need raw bytes.
 
 import crypto from 'crypto';
 
@@ -48,8 +47,7 @@ export function requireApiKey(req, res, next) {
   const key = req.headers['authorization']?.replace('Bearer ', '');
   if (!key) return res.status(401).json({ error: 'Missing Authorization header' });
 
-  // In production this would check against a hashed key in DB
-  // For hackathon, we check against the merchant's stored apiKey
+  // For the hackathon purpose, we check against the merchant's stored apiKey
   req.apiKey = key;
   next();
 }
